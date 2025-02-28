@@ -1,0 +1,137 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe4e1; /* 눈이 아주 편한 핑크 배경 */
+    color: #333; /* 텍스트 색상 */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 화면 높이를 100%로 설정 */
+    justify-content: flex-start; /* 요소들을 위에서부터 배치 */
+}
+
+/* 내비게이션 바 스타일 */
+.navbar {
+    display: flex;
+    align-items: center;
+    position: relative; /* 드롭다운 메뉴 위치 설정을 위해 필요 */
+}
+
+/* 햄버거 버튼 스타일 */
+.navbar__button {
+    cursor: pointer;
+    width: 50px; /* 버튼 너비 */
+    height: 50px; /* 버튼 높이 */
+    position: relative; /* 위치 설정 */
+    margin-right: 25px; /* 오른쪽 여백 */
+    transition: transform 0.3s ease; /* 크기 변화 애니메이션 */
+}
+
+/* 햄버거 버튼의 선 */
+.line {
+    position: absolute;
+    width: 35px; /* 선 너비 */
+    height: 5px; /* 선 높이 */
+    background-color: #ff6f91; /* 햄버거 버튼 선 색상 */
+    border-radius: 5px; /* 둥글게 */
+    transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+
+/* 각 선의 위치 */
+.line:nth-child(1) {
+    top: 15px; /* 첫 번째 선 위치 */
+}
+
+.line:nth-child(2) {
+    top: 25px; /* 두 번째 선 위치 */
+}
+
+.line:nth-child(3) {
+    top: 35px; /* 세 번째 선 위치 */
+}
+
+/* 햄버거 버튼 활성화 스타일 (하트 모양으로 변환) */
+.navbar__button.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg); /* 첫 번째 선 회전 */
+}
+
+.navbar__button.active .line:nth-child(2) {
+    opacity: 0; /* 두 번째 선 숨기기 */
+}
+
+.navbar__button.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg); /* 세 번째 선 회전 */
+}
+
+/* 클릭 시 버튼 크기 변화 */
+.navbar__button:hover {
+    transform: scale(1.1); /* 마우스 오버 시 크기 증가 */
+}
+
+/* 메뉴 기본 스타일 */
+.menu {
+    list-style: none; /* 리스트 스타일 제거 */
+    padding: 0;
+    display: none; /* 기본적으로 숨김 */
+    position: absolute; /* 햄버거 버튼 아래에 위치하도록 설정 */
+    top: 100%; /* 햄버거 버튼의 아래쪽에 위치 */
+    left: 0; /* 좌측 정렬 */
+    background-color: #ffccdf; /* 드롭다운 배경색 */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    width: 250px; /* 드롭다운 너비 설정 */
+    border-radius: 10px; /* 메뉴 둥글게 */
+    animation: fadeIn 0.3s; /* 애니메이션 추가 */
+}
+
+.menu.active {
+    display: block; /* active 클래스가 있을 때 드롭다운 표시 */
+}
+
+.menu li {
+    display: block; /* 블록으로 표시하여 수직 배치 */
+}
+
+.menu li a {
+    padding: 12px 20px; /* 여백 추가 */
+    display: block; /* 블록으로 표시 */
+    color: #000; /* 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    border-radius: 8px; /* 링크 둥글게 */
+    transition: background-color 0.3s, color 0.3s; /* 배경색 및 텍스트 색상 전환 효과 */
+}
+
+.menu li a:hover {
+    background-color: #ff99c8; /* 호버 시 배경 색상 변경 */
+    color: #ffffff; /* 호버 시 텍스트 색상 변경 */
+}
+
+/* 애니메이션 정의 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 모바일 최적화 */
+@media (max-width: 600px) {
+    .navbar__button {
+        margin: 10px 0; /* 버튼 여백 조정 */
+    }
+
+    .menu {
+        width: 90%; /* 모바일에서 메뉴 너비 조정 */
+        left: 50%;
+        transform: translateX(-50%); /* 중앙 정렬 */
+    }
+}
+
+h1 a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #ff4f7b; /* 원하는 색상으로 변경 (예: 핑크색) */
+}
