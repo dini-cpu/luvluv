@@ -135,3 +135,8 @@ h1 a {
     text-decoration: none; /* 밑줄 제거 */
     color: #ff4f7b; /* 원하는 색상으로 변경 (예: 핑크색) */
 }
+
+img {
+    width: 100%;
+    height: auto; /* 비율을 유지하면서 높이는 자동 조정 */
+}
