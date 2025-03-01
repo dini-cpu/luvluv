@@ -173,3 +173,18 @@ h1 a:hover {
     transform: translateY(0); /* 메뉴가 원래 위치로 돌아옴 */
     opacity: 1; /* 보이게 설정 */
 }
+
+
+
+#typingText {
+    font-size: 24px; /* 원하는 크기로 조정 */
+    color: #333; /* 텍스트 색상 */
+    border-right: 2px solid; /* 커서 효과 */
+    animation: blink 0.7s step-end infinite; /* 커서 깜빡임 효과 */
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent; /* 커서 깜빡이기 */
+    }
+}
