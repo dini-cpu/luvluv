@@ -10,8 +10,9 @@ body {
     flex-direction: column;
     min-height: 100vh; /* 화면 높이를 100%로 설정 */
     justify-content: flex-start; /* 요소들을 위에서부터 배치 */
-    font-size: 12px; /* 전체 텍스트 크기 조정 (예: 12px로 변경) */
+    font-size: 15px !important; /* 전체 텍스트 크기 조정 */
 }
+
 
 
 /* 내비게이션 바 스타일 */
@@ -179,7 +180,7 @@ h1 a:hover {
 
 
 #typingText {
-    font-size: 13px !important; /* 원하는 크기로 조정 */
+    font-size: 15px; /* 원하는 크기로 조정 */
     color: #333; /* 텍스트 색상 */
 }
 
