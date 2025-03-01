@@ -143,3 +143,33 @@ h1 a:hover {
     color: #ff99c8; /* 호버 시 색상 변경 (선택 사항) */
 }
 
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.navbar__button:hover img {
+    animation: heartBeat 0.5s infinite; /* 하트 애니메이션 */
+}
+
+
+
+
+
+
+
+.menu {
+    transform: translateY(-10px); /* 메뉴가 위에서 내려오는 효과 */
+    opacity: 0; /* 초기 투명도 설정 */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 애니메이션 추가 */
+}
+
+.menu.active {
+    transform: translateY(0); /* 메뉴가 원래 위치로 돌아옴 */
+    opacity: 1; /* 보이게 설정 */
+}

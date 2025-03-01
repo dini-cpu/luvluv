@@ -44,3 +44,28 @@ musicToggle.addEventListener('change', () => {
         localStorage.setItem('musicEnabled', 'false'); // 상태 저장
     }
 });
+
+
+
+
+const typingText = document.getElementById('typingText');
+const text = typingText.innerHTML.replace(/\\n/g, '\n'); // 원래 텍스트 가져오기, \n을 실제 줄바꿈으로 변환
+typingText.innerHTML = ''; // 초기화
+let index = 0;
+
+function type() {
+    if (index < text.length) {
+        typingText.innerHTML += text.charAt(index); // 하나의 문자 추가
+
+        // 줄바꿈 처리
+        if (text.charAt(index) === '\n') {
+            typingText.innerHTML += '<br>'; // 줄바꿈 시 <br> 추가
+        }
+
+        index++;
+        setTimeout(type, 100); // 100ms 후 다음 문자 타이핑
+    }
+}
+
+// 페이지 로드 시 타이핑 시작
+window.addEventListener('load', type);
