@@ -13,8 +13,6 @@ body {
     font-size: 15px !important; /* 전체 텍스트 크기 조정 */
 }
 
-
-
 /* 내비게이션 바 스타일 */
 .navbar {
     display: flex;
@@ -120,39 +118,38 @@ body {
 
 /* 모바일 최적화 */
 @media (max-width: 600px) {
+    .music-label {
+        width: 40px; /* 모바일에서 너비 줄이기 */
+        height: 40px; /* 모바일에서 높이 줄이기 */
+        font-size: 20px; /* 음표 크기 조정 */
+    }
+
     .navbar__button {
         margin: 10px 0; /* 버튼 여백 조정 */
-    }}
+    }
 
     h1 a {
-    text-decoration: none; /* 밑줄 제거 */
-    color: #ff4f7b; /* 핑크색으로 변경 */
-    font-size: 36px; /* 원하는 크기로 조정 (필요 시) */
-    transition: color 0.3s; /* 색상 전환 효과 */
-}
-
-h1 a:hover {
-    color: #ff99c8; /* 호버 시 색상 변경 (선택 사항) */
-}
-
-h1 a {
-    text-decoration: none; /* 밑줄 제거 */
-    color: #ff4f7b; /* 핑크색으로 변경 */
-    font-size: 36px; /* 원하는 크기로 조정 (필요 시) */
-    transition: color 0.3s; /* 색상 전환 효과 */
-}
-
-h1 a:hover {
-    color: #ff99c8; /* 호버 시 색상 변경 (선택 사항) */
-}
-
-
-@keyframes heartBeat {
-    0%, 100% {
-        transform: scale(1);
+        font-size: 24px; /* 제목 크기 조정 (필요 시) */
     }
+}
+
+/* 이미지 스타일 */
+img {
+    max-width: 100%; /* 화면 너비에 맞게 조정 */
+    height: auto; /* 비율 유지 */
+    border-radius: 15px; /* 둥글게 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+}
+
+#typingText {
+    font-size: 15px; /* 원하는 크기로 조정 */
+    color: #333; /* 텍스트 색상 */
+}
+
+/* 커서 깜빡임 효과 */
+@keyframes blink {
     50% {
-        transform: scale(1.2);
+        border-color: transparent; /* 커서 깜빡이기 */
     }
 }
 
@@ -160,12 +157,7 @@ h1 a:hover {
     animation: heartBeat 0.5s infinite; /* 하트 애니메이션 */
 }
 
-
-
-
-
-
-
+/* 메뉴 애니메이션 */
 .menu {
     transform: translateY(-10px); /* 메뉴가 위에서 내려오는 효과 */
     opacity: 0; /* 초기 투명도 설정 */
@@ -175,17 +167,4 @@ h1 a:hover {
 .menu.active {
     transform: translateY(0); /* 메뉴가 원래 위치로 돌아옴 */
     opacity: 1; /* 보이게 설정 */
-}
-
-
-
-#typingText {
-    font-size: 15px; /* 원하는 크기로 조정 */
-    color: #333; /* 텍스트 색상 */
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent; /* 커서 깜빡이기 */
-    }
 }
