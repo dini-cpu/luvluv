@@ -12,12 +12,16 @@
     <h1><a href="index.html">언젠가 알겠지</a></h1>
     
     <div class="header">
-        <div class="navbar" id="navbar">
+        <div class="navbar">
             <div class="navbar__button" id="toggleButton">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+                <img src="heart-solid.svg" alt="하트 아이콘" width="40" height="40" id="heartIcon" style="filter: brightness(0) saturate(100%) hue-rotate(330deg); transition: transform 0.3s;">
             </div>
+            
+            <div class="music-toggle">
+                <input type="checkbox" id="musicToggle" checked>
+                <label for="musicToggle" class="music-label">🎵</label>
+            </div>
+
             <ul class="menu" id="menu">
                 <li><a href="1.html">시작은</a></li>
                 <li><a href="2.html">언제나</a></li>
@@ -28,7 +32,11 @@
         </div>
     </div>
 
-<body>
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="언젠가 알겠지.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    
     <p> 언니, 저는 언니를 건강하게 만나고 싶었어요.<br>
         <br>
         바쁜 일상 속에서 짐이 되고 싶지 않아서요.<br>

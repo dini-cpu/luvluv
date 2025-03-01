@@ -17,56 +17,50 @@ body {
     display: flex;
     align-items: center;
     position: relative; /* 드롭다운 메뉴 위치 설정을 위해 필요 */
+    justify-content: space-between; /* 좌우 정렬 */
 }
 
-/* 햄버거 버튼 스타일 */
+/* 하트 버튼 스타일 */
 .navbar__button {
     cursor: pointer;
+    margin-right: 15px; /* 오른쪽 여백 */
+    display: flex; /* flexbox 사용 */
+    align-items: center; /* 수직 정렬 */
+    justify-content: center; /* 수평 정렬 */
+}
+
+/* 음악 토글 스타일 */
+.music-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* 오른쪽으로 붙이기 */
+}
+
+.music-toggle input {
+    display: none; /* 기본 체크박스 숨김 */
+}
+
+.music-label {
+    background-color: #ff6f91; /* 핑크색 배경 */
+    border-radius: 50%; /* 둥글게 */
+    padding: 10px; /* 여백 */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* 부드러운 전환 효과 */
+    font-size: 24px; /* 음표 크기 조정 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px; /* 버튼 너비 */
     height: 50px; /* 버튼 높이 */
-    position: relative; /* 위치 설정 */
-    margin-right: 25px; /* 오른쪽 여백 */
-    transition: transform 0.3s ease; /* 크기 변화 애니메이션 */
 }
 
-/* 햄버거 버튼의 선 */
-.line {
-    position: absolute;
-    width: 35px; /* 선 너비 */
-    height: 5px; /* 선 높이 */
-    background-color: #ff6f91; /* 햄버거 버튼 선 색상 */
-    border-radius: 5px; /* 둥글게 */
-    transition: all 0.3s ease; /* 애니메이션 효과 */
-}
-
-/* 각 선의 위치 */
-.line:nth-child(1) {
-    top: 15px; /* 첫 번째 선 위치 */
-}
-
-.line:nth-child(2) {
-    top: 25px; /* 두 번째 선 위치 */
-}
-
-.line:nth-child(3) {
-    top: 35px; /* 세 번째 선 위치 */
-}
-
-/* 햄버거 버튼 활성화 스타일 (하트 모양으로 변환) */
-.navbar__button.active .line:nth-child(1) {
-    transform: translateY(10px) rotate(45deg); /* 첫 번째 선 회전 */
-}
-
-.navbar__button.active .line:nth-child(2) {
-    opacity: 0; /* 두 번째 선 숨기기 */
-}
-
-.navbar__button.active .line:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg); /* 세 번째 선 회전 */
+.music-toggle input:checked + .music-label {
+    background-color: #ff4f7b; /* 체크 시 색상 변경 */
+    transform: scale(1.1); /* 체크 시 크기 증가 */
 }
 
 /* 클릭 시 버튼 크기 변화 */
-.navbar__button:hover {
+.navbar__button:hover img {
     transform: scale(1.1); /* 마우스 오버 시 크기 증가 */
 }
 
@@ -83,11 +77,14 @@ body {
     z-index: 1000; /* 다른 요소 위에 표시 */
     width: 250px; /* 드롭다운 너비 설정 */
     border-radius: 10px; /* 메뉴 둥글게 */
-    animation: fadeIn 0.3s; /* 애니메이션 추가 */
+    opacity: 0; /* 초기에는 보이지 않음 */
+    transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
 }
 
+/* 메뉴가 활성화되었을 때 */
 .menu.active {
     display: block; /* active 클래스가 있을 때 드롭다운 표시 */
+    opacity: 1; /* 보이게 설정 */
 }
 
 .menu li {
@@ -122,24 +119,27 @@ body {
 @media (max-width: 600px) {
     .navbar__button {
         margin: 10px 0; /* 버튼 여백 조정 */
-    }
+    }}
 
-    .menu {
-        width: 90%; /* 모바일에서 메뉴 너비 조정 */
-        left: 50%;
-        transform: translateX(-50%); /* 중앙 정렬 */
-    }
+    h1 a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #ff4f7b; /* 핑크색으로 변경 */
+    font-size: 36px; /* 원하는 크기로 조정 (필요 시) */
+    transition: color 0.3s; /* 색상 전환 효과 */
+}
+
+h1 a:hover {
+    color: #ff99c8; /* 호버 시 색상 변경 (선택 사항) */
 }
 
 h1 a {
     text-decoration: none; /* 밑줄 제거 */
-    color: #ff4f7b; /* 원하는 색상으로 변경 (예: 핑크색) */
+    color: #ff4f7b; /* 핑크색으로 변경 */
+    font-size: 36px; /* 원하는 크기로 조정 (필요 시) */
+    transition: color 0.3s; /* 색상 전환 효과 */
 }
 
-img {
-    max-width: 100%;
-    max-height: 100vh;
-    object-fit: contain;
-    margin: auto;
-    display: block;
+h1 a:hover {
+    color: #ff99c8; /* 호버 시 색상 변경 (선택 사항) */
 }
+
