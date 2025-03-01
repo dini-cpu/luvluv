@@ -119,9 +119,9 @@ body {
 /* 모바일 최적화 */
 @media (max-width: 600px) {
     .music-label {
-        width: 40px; /* 모바일에서 너비 줄이기 */
-        height: 40px; /* 모바일에서 높이 줄이기 */
-        font-size: 20px; /* 음표 크기 조정 */
+        width: 25px; /* 모바일에서 너비 줄이기 */
+        height: 25px; /* 모바일에서 높이 줄이기 */
+        font-size: 15px; /* 음표 크기 조정 */
     }
 
     .navbar__button {
@@ -135,8 +135,9 @@ body {
 
 /* 이미지 스타일 */
 img {
-    max-width: 100%; /* 화면 너비에 맞게 조정 */
+    width: 100%; /* 화면 너비에 맞게 조정 */
     height: auto; /* 비율 유지 */
+    object-fit: cover; /* 이미지가 비율을 유지하면서 화면 크기에 맞춰짐 */
     border-radius: 15px; /* 둥글게 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
 }
@@ -159,12 +160,4 @@ img {
 
 /* 메뉴 애니메이션 */
 .menu {
-    transform: translateY(-10px); /* 메뉴가 위에서 내려오는 효과 */
-    opacity: 0; /* 초기 투명도 설정 */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* 애니메이션 추가 */
-}
-
-.menu.active {
-    transform: translateY(0); /* 메뉴가 원래 위치로 돌아옴 */
-    opacity: 1; /* 보이게 설정 */
-}
+    transform: translateY(-10px
