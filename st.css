@@ -134,13 +134,14 @@ body {
 }
 
 /* 이미지 스타일 */
-img {
-    width: 100%; /* 화면 너비에 맞게 조정 */
+.responsive-image {
+    max-width: 100%; /* 화면 너비에 맞게 조정 */
     height: auto; /* 비율 유지 */
-    object-fit: cover; /* 이미지가 비율을 유지하면서 화면 크기에 맞춰짐 */
+    object-fit: contain; /* 이미지 비율 유지하면서 크기 조정 */
     border-radius: 15px; /* 둥글게 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
 }
+
 
 #typingText {
     font-size: 15px; /* 원하는 크기로 조정 */
